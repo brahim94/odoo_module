@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Data records go here -->
+    <record id="profile_view_form" model="ir.ui.view">
+        <field name="name">Profile Form</field>
+        <field name="model">profile.list</field>
+        <field name="arch" type="xml">
+        <form>
+             <sheet>
+
+                    <group col="2">
+                        <group string="Générale">
+                            <field name="name"/>
+                            <field name="descp"/>
+                        </group>
+                      </group>
+            </sheet>
+         </form>
+        </field>
+    </record>
+
+    <record id="profile_list_view_tree" model="ir.ui.view">
+        <field name="name">profile.list.tree</field>
+        <field name="model">profile.list</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="name"/>
+            <field name="descp"/>
+            </tree>
+        </field>
+    </record>
+
+    
+    <record model="ir.actions.act_window" id="profile_list_action">
+    <field name="name">Profile</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">profile.list</field>
+    <!--field name="view_type">form</field-->
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+            <p class="oe_view_nocontent_smiling_face"> créer votre première liste Profile
+                </p>
+            </field>
+        </record>
+        
+    <!--menuitem name="Boys" id="menu_root" sequence="115" groups="base.group_user" web_icon="boys,static/description/icon.png"/>
+    <menuitem id="Boys_top_menu" name="Boys" sequence="2" groups ="base.group_user"/> 
+    <menuitem name="Boys"  parent="menu_root" id="boys_list_menu" sequence="100" groups ="base.group_user"/>
+    <menuitem action="boys_list_action" parent="boys_list_menu" id="boys_list_menu_item" sequence="2"/-->
+
+
+     <menuitem action="profile_list_action" id="profile_list_menu" name="Profile" parent="base.menu_users"
+              />
+ </odoo>
