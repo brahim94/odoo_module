@@ -16,3 +16,11 @@ class ResUsers(models.Model):
     _inherit = "res.users"
 
     profile_inht = fields.One2many('res.users', 'profile', string='Profile')
+
+
+class SaleOrderLine(models.Model):
+
+    _inherit = 'sale.order.line'
+
+profile_in = fields.One2many('res.users', 'profile', string="Profile")
+

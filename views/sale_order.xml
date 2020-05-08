@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+     Copyright 2015 Grupo ESOC Ingeniería de Servicios, S.L.U. -->
+<odoo>
+    <data>
+
+
+        <record id="view_sale_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+          <xpath expr="//notebook//page//field//form//field[@name='price_unit']" position="before">
+            <field name="profile"/>
+        </xpath>
+        </field>
+        </record>
+
+
+        
+
+    </data>
+
+</odoo>
