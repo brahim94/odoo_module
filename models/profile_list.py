@@ -20,7 +20,8 @@ class ResUsers(models.Model):
 
 class SaleOrderLine(models.Model):
 
-    _inherit = 'sale.order.line'
+    _inherit = 'sale.order'
 
-profile_in = fields.One2many('res.users', 'profile', string="Profile")
+    profile_in = fields.One2many('res.users', 'profile', string='Profile')
+    
 

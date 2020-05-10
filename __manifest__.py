@@ -29,6 +29,7 @@
         'views/views.xml',
         'views/res_users.xml',
         'views/profile_list.xml',
+        'views/sale_order.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

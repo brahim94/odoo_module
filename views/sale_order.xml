@@ -4,21 +4,16 @@
 <odoo>
     <data>
 
-
-        <record id="view_sale_form_inherit" model="ir.ui.view">
-            <field name="name">sale.order.form.inherit</field>
-            <field name="model">sale.order</field>
-            <field name="type">form</field>
-            <field name="inherit_id" ref="sale.view_order_form"/>
-            <field name="arch" type="xml">
-          <xpath expr="//notebook//page//field//form//field[@name='price_unit']" position="before">
-            <field name="profile"/>
-        </xpath>
-        </field>
-        </record>
-
-
-        
+            <record id="view_sale_order_tree" model="ir.ui.view">
+                <field name="name">view.sale.order.tree</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale.view_order_form"/>
+                <field name="arch" type="xml">
+               <xpath expr="/form/sheet/notebook/page[@name='other_information']/group/group[@name='sales_person']/field[@name='user_id']" position="after">
+                        <field name="profile_in"/>
+                </xpath>
+                </field>
+            </record>
 
     </data>
 
