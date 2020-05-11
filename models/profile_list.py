@@ -16,7 +16,7 @@ class ResUser(models.Model):
 
     _inherit = "res.users"
 
-    profile = fields.Many2many('res.profile', 'Profile', string='Profile')
+    profile = fields.Many2one('res.profile', string='Profile')
 
 
 
@@ -24,7 +24,7 @@ class SaleOrderLine(models.Model):
 
     _inherit = "sale.order"
 
-    profile_in = fields.Many2many('res.profile', 'profile', string='Profile')
+    profile_in = fields.Many2one('res.profile', string='Profile')
 
 
 
