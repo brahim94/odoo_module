@@ -6,22 +6,25 @@ from odoo import models, fields, api
 class Profilelist(models.Model):
 
     _name = 'profile.list'
+
+    dcp = fields.Char('Description')
+    namee = fields.Char('Nom de profile')
     
-    name = fields.Char('Nom de profile')
-    descp = fields.Char('Description')
     
 
-class ResUsers(models.Model):
+class ResUser(models.Model):
 
     _inherit = "res.users"
 
-    profile_inht = fields.One2many('res.users', 'profile', string='Profile')
+    profile = fields.Many2many('res.profile', 'Profile', string='Profile')
+
 
 
 class SaleOrderLine(models.Model):
 
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
-    profile_in = fields.One2many('res.users', 'profile', string='Profile')
-    
+    profile_in = fields.Many2many('res.profile', 'profile', string='Profile')
+
+
 
