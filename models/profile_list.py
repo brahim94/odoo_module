@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import Warning,ValidationError,UserError
 
 
 class Profilelist(models.Model):
@@ -25,6 +26,9 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order"
 
     profile_in = fields.Many2one('res.profile', string='Profile')
+
+
+
 
 
 

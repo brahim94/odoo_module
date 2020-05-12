@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'contacts'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/res_users.xml',
+        'report/print_page.xml',
         'views/profile_sales.xml',
         'views/profile_list.xml',
         'views/templates.xml',
