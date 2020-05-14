@@ -26,9 +26,16 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order"
 
     profile_in = fields.Many2one('res.profile', string='Profile')
+    type_ven =  fields.Selection([ ('type1', 'Projet'),('type2', 'Vente directe'),],'Type vente', default='type1')
+    compta_analy = fields.Char('Compte analytique')
 
 
 
+class my_project(models.Model):
+       
+    _inherits = {'project.project':'project_id'}
+   
+    project_id = fields.Many2one('project.project', 'Project', ondelete="cascade", required=True)
 
 
 

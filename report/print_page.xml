@@ -43,7 +43,7 @@
 					</table>
 	
 
-					<table style="font-size:20px; width:80%">
+					<table style="font-size:20px; width:70%">
 					<tr>
 					<style>    
 							table {
@@ -74,7 +74,7 @@
 							</tr>
 					</table>
 
-					<table style="font-size:20px; width:80%">
+					<table style="font-size:20px; width:70%">
 						<tr>	
 							<th  rowspan="3" >Adresse:</th>
 								<td style="width:40%" t-esc="contact.street"></td>
@@ -89,7 +89,7 @@
 						</tr>
 					</table>
 
-					<table style="font-size:20px; width:60%">					
+					<table style="font-size:20px; width:50%">					
 						<tr>
 							<th> 
 							<p>Téléphone:</p>
@@ -97,7 +97,7 @@
 							</th>
 						</tr>
 					</table>
-					<table style="font-size:20px; width:60%">
+					<table style="font-size:20px; width:50%">
 						<tr>
 							<th>
 								<p>Email:</p>

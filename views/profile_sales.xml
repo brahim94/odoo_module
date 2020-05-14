@@ -12,6 +12,12 @@
                <xpath expr="/form/sheet/notebook/page[@name='other_information']/group/group[@name='sales_person']/field[@name='user_id']" position="after">
                         <field name="profile_in"/>
                 </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='validity_date']" position="after">
+                        <field name="type_ven"/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='partner_id']" position="after">
+                       <field name="compta_analy" attrs="{'invisible':[('type_ven', '==', 'type2')]}" />
+                </xpath>
                 </field>
             </record>
 
