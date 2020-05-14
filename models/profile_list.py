@@ -31,11 +31,11 @@ class SaleOrderLine(models.Model):
 
 
 
-class my_project(models.Model):
+#class my_project(models.Model):
        
-    _inherits = {'project.project':'project_id'}
+    #_inherits = {'project.project':'project_id'}
    
-    project_id = fields.Many2one('project.project', 'Project', ondelete="cascade", required=True)
+    #project_id = fields.Many2one('project.project', 'Project', ondelete="cascade", required=True)
 
 
 
