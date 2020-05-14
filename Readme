@@ -1,0 +1,61 @@
+1- ajouter la classe suivante dans la table res.user(/usr/lib/python3/dist-packages/odoo/addons/base/models/res_users.py)
+ afin d'établir la relation profile_many2one_res.users 
+
+class Profile(models.Model):
+    _name = "res.profile"
+
+    name = fields.Char('Nom de profile')
+    descp = fields.Char('Description')
+
+
+2- mettre le module "base" à jour pour que les modifications soients prises en charge.
+
+:~$ sudo su postgres
+postgres@ubuntu:~$ /usr/bin/odoo -u base -d <nom_base_donnée_odoo>
+
+
+3- creer un fichier de type xml pour y associé la vue correspondante  
+
+:~$ sudo touche res_profile.xml /usr/lib/python3/dist-packages/odoo/addons/base/views	
+
+ajouter le contenu suivant:
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="rs_profile_form" model="ir.ui.view">
+        <field name="name">PROFILE Form</field>
+        <field name="model">res.profile</field>
+        <field name="arch" type="xml">
+                <form>
+                        <sheet>
+                        <group col="2">
+                                <group string="Profile">
+                                        <field name="name"/>
+                                        <field name="descp"/>
+                                </group>
+                        </group>
+                        </sheet>                
+                </form>
+        </field>
+
+
+4- déclarer le nom du fichier 'res_profile.xml' au fichier __manifest__.py dans le regisre data pour que le système puisse le chargé.
+
+'data': ['views/res_profile.xml',]
+
+
+5- ajouter les permissions au dessous de fichier /usr/lib/python3/dist-packages/odoo/addons/base/security/ir.model.access.csv
+
+access_res_profile_user,res.profile.user,model_res_profile,base.group_user,1,0,0,0
+acces_res_profile_admin,res.profile.admin,model_res_profile,base.group_system,1,1,1,1
+
+6- rééxucuter l'étape 2
+
+7- puis installer le module "profile" 
+
+NB: si vous rencotrez un message d'erreur de type "permission denied for relation res_partner", procedez ainsi :
+
+$ sudo su postgres 
+postgres@ubuntu~$  psql
+postgres=# ALTER USER <nom_de_propriétaire_de_la_base_odoo> WITH SUPERUSER;
