@@ -26,7 +26,7 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order"
 
     profile_in = fields.Many2one('res.profile', string='Profile')
-    type_ven =  fields.Selection([ ('type1', 'Projet'),('type2', 'Vente directe'),],'Type vente', default='type1')
+    type_ven =  fields.Selection([ ('type1', 'Projet'),('type2', 'Vente directe'),],'Type vente', default='type2')
     compta_analy = fields.Char('Compte analytique')
 
 
